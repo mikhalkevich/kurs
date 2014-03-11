@@ -1,0 +1,148 @@
+body {
+  padding:0px;
+  margin:0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background:#f9f7f7;
+}
+a {
+  color: #00B7FF;
+}
+h4 {
+ margin-top:2px;
+}
+.toph1 {
+ background:#22314d;
+ color:white;
+ font-size:22px;
+ box-shadow:1px 1px 2px black;
+ padding:7px;
+ margin:0;
+}
+.big {
+ font-style:italic;
+}
+.btn_my_head {
+ background:#2D436E !important;
+ display:block;
+ opacity:1;
+ color:white !important;
+ padding:8px;
+}
+.topmenu {
+ display: flex;
+ display: -moz-box;
+ display: -webkit-flex;
+ text-align:center;
+ flex-direction: row; 
+ width:99%;
+ margin:0 auto;
+ border:solid 1px #ccc;
+ box-shadow:1px 1px 9px #000;
+}
+.topmenu a{
+ display:block;
+ -moz-box-flex:1;
+ -webkit-flex:1;
+ flex:1;
+ font-size:14px;
+ padding:10px;
+ color:white;
+ background:#2d436e;
+ text-transform:uppercase;
+ border-right:dotted 1px #888;
+}
+.topmenu a:hover{
+ text-decoration:none;
+ background:white;
+}
+.mainblock {
+ width:900px;
+ margin:0 auto; 
+}
+.mainblock>div{
+ box-shadow:1px 1px 10px black;
+ background:#f0f0f0;
+ padding:6px;
+ border-radius:3px;
+ margin:2px;
+ margin-right:0;
+}
+.block_for_text {
+ float:left;
+ width:630px;
+ background:white !important;
+}
+.form-horizontal {
+ float:right;
+}
+#bl1 {
+ float:rigt;
+ background:white !important;
+}
+.block_right .btn_my{
+ display:block;
+}
+.checkbox {
+ float:left;
+ margin-right:5px;
+}
+.form-horizontal {
+ width:250px;
+}
+.form-group {
+ text-align:right;
+}
+.btn_my {
+ padding-bottom:5px;
+ padding-top:3px;
+ font-size:16px;
+ padding-left:6px;
+ border-bottom:solid 1px #ccc;
+}
+.btn_my:hover{
+ opacity:0.5;
+}
+.block_right a.btn_my_head:hover{
+ opacity:1;
+}
+.accordion-toggle {
+ display:block;
+ z-index:99;
+ position:relative;
+}
+.panel-body {
+ position:relative;
+ z-index:1;
+}
+.accordion-toggle:hover {
+ opacity:1;
+}
+.bred {
+ font-weight:bold;
+}
+.bred1 {
+ display:block;
+}
+.block_right a:hover {
+ text-decoration:none;
+}
+.block_right span.red{
+ color:red;
+ font-size:12px;
+}
+.block_right span.green {
+ color:green;
+ font-size:14px;
+}
+.bred img{
+ float:right;
+ border:solid 2px white;
+}
+.copyright {
+ margin-top:30px;
+ padding-top:30px;
+ padding-bottom:30px;
+ text-align:center;
+ background:#c2c2c2;
+ color:white;
+}

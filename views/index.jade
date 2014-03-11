@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  h1.toph1
+   span= title
+  div.mainblock
+   h2= id
+   div.block_for_text.
+     Ни банки, ни политика, ни религии, ни деньги не способны решать проблемы и улучшать жизнь. Вода в кране, теплый дом, интернет и лекарства от болезней — всё это плод работы ученых и инженеров. Знания — основа человеческой цивилизации, поэтому знания должны быть свободными и доступными. 
+   div.block_right 
+    form.form-horizontal(role='form')
+            .form-group
+                .col-sm-12
+                  input#inputEmail3.form-control(type='email', placeholder='Email')
+              .form-group
+                .col-sm-12
+                  input#inputPassword3.form-control(type='password', placeholder='Password')
+              .form-group
+                .col-sm-12
+                  span.checkbox
+                    label
+                      input(type='checkbox')
+                      | Remember me
+                  button.btn.btn-default(type='submit') ВХОД
+    br(style='clear:both')
+   div.block_right#bl1
+    div(ng-controller='AccordionDemoCtrl')
+     accordion(close-others='oneAtATime')
+        accordion-group(heading='WEB', is-open='true')
+         a(href='#', class='btn_my') Как найти работу в IT:
+          span.bred  WEB-аналитика
+            img(src='images/no_photo.png')
+          span.bred1  Место проведения:
+          span.bred2  г.Минск, станция местро Фрунзенская, здание "Центр обучающих технологий" 
+         a(href='#', class='btn_my') Web-аналитика:
+              span.bred  WEB-аналитика
+                img(src='images/no_photo.png')
+              span.bred1  Место проведения:
+              span.bred2  г.Минск, станция местро Фрунзенская, здание "Центр обучающих технологий"
+        accordion-group(heading='Искусство. Ремесла', is-open='false')
+          | This content is straight in the template.
+        accordion-group(heading='Спорт. Здоровье', is-open='false')
+          | This content is straight in the template.
+        accordion-group(heading='Наука и техника', is-open='false')
+          | This content is straight in the template.
+        accordion-group(heading='Хозяйство', is-open='false')
+          | This content is straight in the template.
+        accordion-group(heading='Естествознание', is-open='false')
+          | This content is straight in the template.
+    br(style='clear:both')   
+  br(style='clear:both')
+  div.copyright &copy; Все права защищены. MyStudio 2014г.
