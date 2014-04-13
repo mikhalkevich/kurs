@@ -11,7 +11,7 @@ h4 {
  margin-top:2px;
 }
 .toph1 {
- background:#22314d;
+ background:#00A5FF;
  color:white;
  font-size:22px;
  box-shadow:1px 1px 2px black;
@@ -34,7 +34,7 @@ h4 {
  display: -webkit-flex;
  text-align:center;
  flex-direction: row; 
- width:99%;
+ width:100%;
  margin:0 auto;
  border:solid 1px #ccc;
  box-shadow:1px 1px 9px #000;
@@ -53,6 +53,7 @@ h4 {
 }
 .topmenu a:hover{
  text-decoration:none;
+ color:black;
  background:white;
 }
 .mainblock {
