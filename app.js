@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var reg = require('./routes/reg');
+var auth = require('./routes/auth');
 var http = require('http');
 var path = require('path');
 var mongoose = require('./config/mongoose');
@@ -34,6 +35,14 @@ app.use(express.session({
   cookie: config.get('session:cookie'),
   store: new MongoStore({mongoose_connection: mongoose.connection})
 }));
+// передача переменных в шаблон
+app.use(function (req, res, next) {
+   res.locals = {
+     userid: req.session.user,
+     title: 'On-line Университет развития личности'
+   };
+   next();
+});
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -47,7 +56,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/reg', reg.index);
-app.get('/logout', reg.logout);
+app.get('/logout',checkAuth, reg.logout);
+app.get('/cabinet',checkAuth, auth.cabinet);
 app.get('/:id', routes.index);
 app.post('/reg', reg.send);
 

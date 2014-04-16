@@ -8,12 +8,22 @@ html(ng-app="plunker")
     script(src='/javascripts/ui-bootstrap-tpls-0.10.0.min.js', type='text/javascript')
     script(src='/javascripts/my.js', type='text/javascript')
   body
-    h1.toph1
-     span= title
-     br
-    nav.topmenu
-     a(href='/') Главная
-     a(href='/users') Пользователи
+    div.toph1 
+     nav.topmenu
+      a(href='/', class='btn btn-link topka') Главная
+      a(href='/users', class='btn btn-link topka') Пользователи
+      if userid
+       a(href='/logout', class='btn btn-link exit') Выход 
+     h1= title 
+     if userid
+       a(href='/cabinet', class='btn btn-large btn-primary') Кабинет пользователя 
+     else
+      form.login-form(method='POST', action='/reg', role='form' name='login-form')
+       div.form-group
+        input.form-control(type='text', placeholder='login' name='username')
+       div.form-group
+        input.form-control(type='password', placeholder='password', name='password')
+       input(class='btn btn-primary btn-large', type='submit', value='Войти или зарегистрироваться')
     div.mainblock
      block content
     br(style='clear:both')   

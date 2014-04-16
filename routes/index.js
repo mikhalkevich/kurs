@@ -21,7 +21,6 @@ exports.index = function(req, res){
            res.render('index', {
 				title: ' On-line Университет Развития Личности',
                 info: info,
-				userid: req.session.user,
 				ttext: ttext
        });
      });

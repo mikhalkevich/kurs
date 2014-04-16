@@ -2,7 +2,7 @@ body {
   padding:0px;
   margin:0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background:#f9f7f7;
+ background:url(../images/letter33.jpg);
 }
 a {
   color: #00B7FF;
@@ -11,12 +11,14 @@ h4 {
  margin-top:2px;
 }
 .toph1 {
- background:#00A5FF;
- color:white;
+ color:#357EBD;
  font-size:22px;
- box-shadow:1px 1px 2px black;
  padding:7px;
  margin:0;
+ text-align:center;
+}
+.toph1 h1 {
+ padding-top:20px;
 }
 .big {
  font-style:italic;
@@ -28,29 +30,6 @@ h4 {
  color:white !important;
  padding:8px;
 }
-.topmenu {
- display: flex;
- display: -moz-box;
- display: -webkit-flex;
- text-align:center;
- flex-direction: row; 
- width:100%;
- margin:0 auto;
- border:solid 1px #ccc;
- box-shadow:1px 1px 9px #000;
-}
-.topmenu a{
- display:block;
- -moz-box-flex:1;
- -webkit-flex:1;
- flex:1;
- font-size:14px;
- padding:10px;
- color:white;
- background:#2d436e;
- text-transform:uppercase;
- border-right:dotted 1px #888;
-}
 .topmenu a:hover{
  text-decoration:none;
  color:black;
@@ -60,38 +39,20 @@ h4 {
  width:900px;
  margin:0 auto; 
 }
-.mainblock>div{
- box-shadow:1px 1px 10px black;
- background:#f0f0f0;
- padding:6px;
- border-radius:3px;
- margin:2px;
- margin-right:0;
-}
 .block_for_text {
- float:left;
- width:630px;
- background:white !important;
-}
-.form-horizontal {
- float:right;
+ background:white;
+ padding:10px;
+ margin-top:10px;
 }
 #bl1 {
  float:rigt;
- background:white !important;
 }
 .block_right .btn_my{
  display:block;
 }
-.checkbox {
- float:left;
- margin-right:5px;
-}
-.form-horizontal {
- width:250px;
-}
-.form-group {
- text-align:right;
+.login-form {
+ width:235px;
+ margin:0 auto;
 }
 .btn_my {
  padding-bottom:5px;
@@ -138,6 +99,15 @@ h4 {
 .bred img{
  float:right;
  border:solid 2px white;
+}
+.myb {
+ margin-left:5px;
+}
+.exit {
+ float:left;
+}
+.topka {
+ float:right;
 }
 .copyright {
  margin-top:30px;

@@ -1,7 +1,7 @@
 var crypto = require('crypto');
 var async = require('async');
 var util = require('util');
-
+var HttpError =require('../utils/error').HttpError;
 var mongoose = require('../config/mongoose'),
 Schema = mongoose.Schema;
 var schema = new Schema({
@@ -53,7 +53,7 @@ schema.statics.authorize = function(username, password, callback) {
         if (user.checkPassword(password)) {
           callback(null, user);
         } else {
-          callback(new AuthError("Пароль неверен"));
+          callback(new HttpError(403, 'Пароль неверен'));
         }
       } else {
         var user = new User({username: username, password: password});
@@ -69,15 +69,4 @@ schema.statics.authorize = function(username, password, callback) {
 exports.Users = mongoose.model('users', schema);
 
 
-function AuthError(message) {
-  Error.apply(this, arguments);
-  Error.captureStackTrace(this, AuthError);
-
-  this.message = message;
-}
-
-util.inherits(AuthError, Error);
-
-AuthError.prototype.name = 'AuthError';
-
-exports.AuthError = AuthError;
+exports.HttpError = HttpError;

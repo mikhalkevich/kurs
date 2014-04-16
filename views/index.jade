@@ -1,25 +1,8 @@
 extends layout
 block content
-   h2= ttext.name
    div.block_for_text
      !{ttext.body}
-   div.block_right 
-    form.form-horizontal(role='form')
-            .form-group
-                .col-sm-12
-                  input#inputEmail3.form-control(type='email', placeholder='Email')
-              .form-group
-                .col-sm-12
-                  input#inputPassword3.form-control(type='password', placeholder='Password')
-              .form-group
-                .col-sm-12
-                  span.checkbox
-                   if userid
-                    a(href='/logout') Выход
-                   else
-                    a(href='/reg') Регистрация !{userid}
-                  button.btn.btn-default(type='submit') ВХОД
-    br(style='clear:both')
+   br(style='clear:both')
    div.block_right#bl1
     div(ng-controller='AccordionDemoCtrl')
      accordion(close-others='oneAtATime')
