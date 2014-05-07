@@ -27,7 +27,7 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.bodyParser());
+app.use(express.bodyParser({keepExtensions:true, uploadDir: 'public/tmp' }));
 app.use(express.cookieParser());
 app.use(express.session({
   secret:config.get('session:secret'),
@@ -44,6 +44,7 @@ app.use(function (req, res, next) {
    next();
 });
 app.use(express.methodOverride());
+app.use(express.multipart());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -56,10 +57,11 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/reg', reg.index);
-app.get('/logout',checkAuth, reg.logout);
-app.get('/cabinet',checkAuth, auth.cabinet);
+app.get('/logout', checkAuth, reg.logout);
+app.get('/cabinet', checkAuth, auth.cabinet);
 app.get('/:id', routes.index);
 app.post('/reg', reg.send);
+app.post('/cabinet', checkAuth, auth.send);
 
 http.createServer(app).listen(config.get('port'), function(){
   console.log('Express server listening on port ' + config.get('port'));

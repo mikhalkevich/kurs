@@ -1,4 +1,45 @@
 extends layout
 block content
-  h2. Кабинет пользователя
-  
+   div(class='panel panel-default')
+    div.panel-heading
+     h3.panel-title Кабинет пользователя
+    div.panel-body(ng-controller='HeaderController')
+      form(method='POST', action='/cabinet', enctype='multipart/form-data' role='form' name='login-form')
+       input.form-control(type='text', placeholder='Наименование', name='name')
+       br
+       p.btn-group(data-togle='buttons')
+        label(class='btn btn-primary')
+         input(type='radio', id='optionsRadios1', name='options', value='statia' ng-click='statia()')
+         Статья
+        label(class='btn btn-primary')
+         input(type='radio', id='optionsRadios2', name='options', value='book' ng-click='book()')
+         Книга
+        label(class='btn btn-primary')
+         input(type='radio', id='optionsRadios3', name='options', value='audio' ng-click='audio()')
+         Аудио
+        label(class='btn btn-primary')
+         input(type='radio', id='optionsRadios4', name='options', value='video' ng-click='video()')
+         Видео
+        label(class='btn btn-primary')
+         input(type='radio', id='optionsRadios5', name='options', value='pic' ng-click='pic()')
+         Изображение
+        label(class='btn btn-primary')
+         input(type='radio', id='optionsRadios7', name='options', value='link' ng-click='link()')
+         Ссылка
+        label(class='btn btn-primary')
+         input(type='radio', id='optionsRadios8', name='options', value='reklama' ng-click='reklama()')
+         Реклама
+        div(class='{{statiaText}}') 
+         textarea#editor1.ckeditor(name='editor1')
+        div(class='{{bookText}}') 
+         input(type='file', name='book')
+        div(class='{{audioText}}') 
+         input(type='file', name='audio')
+        div(class='{{videoText}}') 
+         textarea.videotext(placeholder='iframe')
+        div(class='{{linkText}}') 
+         input.form-control(name='link', placeholder='URL')
+        div(class='{{picText}}') 
+         input(type='file', name='pic')
+       br
+       input(class='btn btn-primary btn-lg', type='submit', value='Добавить')

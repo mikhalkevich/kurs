@@ -117,3 +117,15 @@ h4 {
  background:#c2c2c2;
  color:white;
 }
+.btn-lg {
+ width:100%;
+}
+.show {
+ display:block;
+}
+.hide {
+ display:none;
+}
+.videotext {
+ width:100%;
+}
