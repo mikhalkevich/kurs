@@ -1,4 +1,8 @@
 {
+	"scripts": ["/javascripts/angular.min.js",
+			    "/javascripts/ui-bootstrap-tpls-0.10.0.min.js",
+			    "/javascripts/my.js"
+	],
 	"port":3000,
 	"mongoose": {
 		"uri": "mongodb://localhost/kurs",

@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var reg = require('./routes/reg');
+var chat = require('./routes/chat');
 var auth = require('./routes/auth');
 var http = require('http');
 var path = require('path');
@@ -39,7 +40,8 @@ app.use(express.session({
 app.use(function (req, res, next) {
    res.locals = {
      userid: req.session.user,
-     title: 'On-line Университет развития личности'
+     title: 'On-line Университет развития личности',
+	 scripts: config.get('scripts')
    };
    next();
 });
@@ -59,10 +61,14 @@ app.get('/users', user.list);
 app.get('/reg', reg.index);
 app.get('/logout', checkAuth, reg.logout);
 app.get('/cabinet', checkAuth, auth.cabinet);
+app.get('/chat', checkAuth, chat.index);
 app.get('/:id', routes.index);
 app.post('/reg', reg.send);
 app.post('/cabinet', checkAuth, auth.send);
 
-http.createServer(app).listen(config.get('port'), function(){
+var server = http.createServer(app);
+server.listen(config.get('port'), function(){
   console.log('Express server listening on port ' + config.get('port'));
 });
+
+require('./socket')(server);

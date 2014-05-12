@@ -4,17 +4,16 @@ html(ng-app="plunker")
     title= title
     link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/javascripts/angular.min.js', type='text/javascript')
-    script(src='/javascripts/ui-bootstrap-tpls-0.10.0.min.js', type='text/javascript')
-    script(src='/ckeditor/ckeditor.js', type='text/javascript')
-    script(src='/javascripts/my.js', type='text/javascript')
+    for script in scripts
+     script(src='#{script}', type='text/javascript')
   body
     div.toph1 
      nav.topmenu	 
       a(href='/', class='btn btn-link topka') Главная
       a(href='/users', class='btn btn-link topka') Пользователи
       if userid
-       a(href='/cabinet', class='btn btn-large btn-danger exit') Кабинет пользователя
+       a(href='/cabinet', class='btn btn-large btn-primary exit') Кабинет пользователя
+       a(href='/chat', class='btn btn-large btn-primary exit') Чат
       if userid
        a(href='/logout', class='btn btn-link exit') Выход 
      h1= title 

@@ -3,7 +3,12 @@ var path = require('path'),
 
 var Usertexts = require('../models/usertexts').usertexts;
 exports.cabinet = function(req, res, next) {
- res.render('cabinet');
+ congif = require('../config');
+ scripts = congif.get("scripts");
+ scripts[3] = '/ckeditor/ckeditor.js';
+ res.render('cabinet', {
+   scripts: scripts
+  });
 };
 
 

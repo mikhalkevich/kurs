@@ -3,6 +3,7 @@
  */
 
 exports.index = function(req, res){
+
     if(req.params.id){
         var indx = req.params.id;
     }else{

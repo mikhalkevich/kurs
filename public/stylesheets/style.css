@@ -105,6 +105,7 @@ h4 {
 }
 .exit {
  float:left;
+ margin-right:6px;
 }
 .topka {
  float:right;

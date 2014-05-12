@@ -13,6 +13,7 @@
     "crypto": "*",
     "async": "*",
     "connect-mongo": "*",
-    "util": "*"
+    "util": "*",
+    "socket.io": "*",
   }
 }
