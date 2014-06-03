@@ -1,7 +1,3 @@
-
-/**
- * Module dependencies.
- */
 //Davidovich
 
 var express = require('express');
